@@ -18,14 +18,14 @@ pushwoosh.initialize({
 });
 
 pushwoosh.registerForPushNotifications(
-  function(e) {
-      setTimeout(function() {
-		Ti.API.info('Registered with push token: ' + e.registrationId);
+	function(e) {
+		setTimeout(function() {
+			Ti.API.info('Registered with push token: ' + e.registrationId);
 		}, 0);
 	},
 	function(e) {
-	setTimeout(function() {
-		Ti.API.error("Error during registration: " + e.error);
+		setTimeout(function() {
+			Ti.API.error("Error during registration: " + e.error);
 		}, 0);
 	}  
 );
@@ -76,14 +76,18 @@ Registers current device for push notifications.
 ```js
 pushwoosh.registerForPushNotifications(
 	function(e) {
-		var pushToken = e.registrationId;
+		setTimeout(function() {
+			var pushToken = e.registrationId;
 
-		// handle successful registration
+			// handle successful registration
+		}
 	},
 	function(e) {
-		var errorMessage = e.error;
+		setTimeout(function() {
+			var errorMessage = e.error;
 		
-		// handle registration error
+			// handle registration error
+		}
 	}
 );
 ```
